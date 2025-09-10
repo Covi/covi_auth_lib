@@ -7,8 +7,8 @@ class PlaywrightAdapter(UIInteractionProtocol):
     def __init__(self, page: Page):
         self._page = page
 
-    def fill_field(self, selector: str, value: str) -> None:
-        self._page.fill(selector, value)
+    def set_value(self, identifier: str, value: str) -> None:
+        self._page.fill(identifier, value)
 
-    def click_button(self, selector: str) -> None:
-        self._page.click(selector)
+    def trigger_action(self, identifier: str) -> None:
+        self._page.click(identifier)

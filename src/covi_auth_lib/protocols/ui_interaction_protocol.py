@@ -3,10 +3,16 @@ from typing import Protocol
 class UIInteractionProtocol(Protocol):
     """Define una forma genérica de interactuar con una UI."""
 
-    def fill_field(self, selector: str, value: str) -> None:
-        """Rellena un campo identificado por un selector con un valor."""
+    def set_value(self, identifier: str, value: str) -> None:
+        """
+        Establece un valor para un elemento identificado.
+        (La implementación podría ser .fill, .send_keys, etc.)
+        """
         ...
 
-    def click_button(self, selector: str) -> None:
-        """Hace clic en un botón identificado por un selector."""
+    def trigger_action(self, identifier: str) -> None:
+        """
+        Desencadena una acción en un elemento identificado.
+        (La implementación podría ser .click, .press('Enter'), etc.)
+        """
         ...

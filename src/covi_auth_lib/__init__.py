@@ -3,7 +3,8 @@ from .protocols.authentication_provider import AuthenticationProvider
 from .protocols.ui_interaction_protocol import UIInteractionProtocol
 from .adapters.playwright_adapter import PlaywrightAdapter
 from .adapters.appium_adapter import AppiumAdapter
-from .providers.web_authentication_provider import WebAuthenticationProvider
+from .providers.username_password_provider import UsernamePasswordProvider
+from .providers.sso_button_provider import SsoButtonProvider
 from .providers.ldap_authentication_provider import LdapAuthenticationProvider
 
 __all__ = [
@@ -12,6 +13,7 @@ __all__ = [
     "UIInteractionProtocol",
     "PlaywrightAdapter",
     "AppiumAdapter",
-    "WebAuthenticationProvider",
+    "UsernamePasswordProvider",
+    "SsoButtonProvider",
     "LdapAuthenticationProvider"
 ]

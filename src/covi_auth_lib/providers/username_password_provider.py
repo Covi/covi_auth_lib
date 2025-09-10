@@ -1,10 +1,9 @@
 from covi_auth_lib.protocols.authentication_provider import AuthenticationProvider
 from covi_auth_lib.protocols.ui_interaction_protocol import UIInteractionProtocol
 
-class WebAuthenticationProvider(AuthenticationProvider):
+class UsernamePasswordProvider(AuthenticationProvider):
     """
-    Estrategia de autenticación que interactúa con una UI a través de un adaptador.
-    Es agnóstica al framework subyacente (Playwright, Appium, etc.).
+    Estrategia de autenticación para un flujo web clásico de usuario y contraseña.
     """
     def __init__(
         self,
@@ -20,20 +19,22 @@ class WebAuthenticationProvider(AuthenticationProvider):
 
     def authenticate(self, **credentials: str) -> bool:
         """
-        Rellena usuario/contraseña y hace clic en 'enviar' usando el adaptador.
+        Provee el usuario/contraseña y desencadena la acción de login.
         Espera 'user' y 'password' en el diccionario de credenciales.
         """
         try:
             user = credentials['user']
             password = credentials['password']
             
-            self._adapter.fill_field(self._user_selector, user)
-            self._adapter.fill_field(self._password_selector, password)
-            self._adapter.click_button(self._submit_selector)
+            # Órdenes agnósticas, basadas en la intención
+            self._adapter.set_value(self._user_selector, user)
+            self._adapter.set_value(self._password_selector, password)
+            self._adapter.trigger_action(self._submit_selector)
+            
             return True
         except KeyError as e:
             print(f"Error: Faltan credenciales requeridas ({e})")
             return False
         except Exception as e:
-            print(f"Error durante la autenticación web: {e}")
+            print(f"Error durante la autenticación: {e}")
             return False
