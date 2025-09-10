@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "covi_auth_lib"
+version = "0.1.0"
+authors = [
+  { name="Juan Antonio Cobo", email="cobo.juanantonio@gmail.com" },
+]
+description = "Una librería de autenticación reutilizable con patrón Strategy."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Covi/covi_auth_lib"
+
+[project.optional-dependencies]
+playwright = ["playwright"]
+appium = ["Appium-Python-Client"]
+all = ["covi_auth_lib[playwright,appium]"]
