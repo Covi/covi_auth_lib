@@ -36,7 +36,7 @@ from covi_auth_lib import (
 with sync_playwright() as p:
     browser = p.chromium.launch()
     page = browser.new_page()
-    page.goto("[http://mi.app.com/login](http://mi.app.com/login)")
+    page.goto("http://mi.app.com/login")
 
     # 2. Composición de objetos (Inyección de Dependencias)
     # El LoginService no sabe nada de Playwright
