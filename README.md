@@ -1,9 +1,7 @@
 # Covi Auth Lib
-
 Una librería de autenticación reutilizable que implementa el patrón de diseño Strategy para permitir diferentes métodos de autenticación de forma desacoplada.
 
 ## Instalación
-
 Instala la librería usando pip. Puedes instalar solo las dependencias que necesites.
 
 ### Instalar el núcleo de la librería
@@ -24,10 +22,10 @@ pip install git+[https://github.com/Covi/covi_auth_lib.git#egg=covi_auth_lib](ht
 ```
 
 ## Uso
-
-El LoginService se desacopla del método de autenticación a través de una Estrategia (Provider) inyectada.from playwright.sync_api import sync_playwright
+El LoginService se desacopla del método de autenticación a través de una Estrategia (Provider) inyectada.
 
 ```python
+from playwright.sync_api import sync_playwright
 from playwright.sync_api import sync_playwright
 from covi_auth_lib import (
     LoginService, 
