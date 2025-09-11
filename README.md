@@ -26,7 +26,6 @@ El LoginService se desacopla del método de autenticación a través de una Estr
 
 ```python
 from playwright.sync_api import sync_playwright
-from playwright.sync_api import sync_playwright
 from covi_auth_lib import (
     LoginService, 
     PlaywrightAdapter, 
