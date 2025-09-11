@@ -6,18 +6,22 @@ Una librería de autenticación reutilizable que implementa el patrón de diseñ
 
 Instala la librería usando pip. Puedes instalar solo las dependencias que necesites.
 
+### Instalar el núcleo de la librería
 ```bash
-# Instalar el núcleo de la librería
 pip install git+[https://github.com/Covi/covi_auth_lib.git](https://github.com/Covi/covi_auth_lib.git)
-
-# Instalar con soporte para Playwright
+```
+### Instalar con soporte para Playwright
+```bash
 pip install git+[https://github.com/Covi/covi_auth_lib.git#egg=covi_auth_lib](https://github.com/Covi/covi_auth_lib.git#egg=covi_auth_lib)[playwright]
-
-# Instalar con soporte para Appium
+```
+### Instalar con soporte para Appium
+```bash
 pip install git+[https://github.com/Covi/covi_auth_lib.git#egg=covi_auth_lib](https://github.com/Covi/covi_auth_lib.git#egg=covi_auth_lib)[appium]
-
-# Instalar todo
+```
+### Instalar todo
+```bash
 pip install git+[https://github.com/Covi/covi_auth_lib.git#egg=covi_auth_lib](https://github.com/Covi/covi_auth_lib.git#egg=covi_auth_lib)[all]
+```
 
 ## Uso
 
@@ -59,3 +63,4 @@ with sync_playwright() as p:
         print("Login fallido.")
     
     browser.close()
+```
